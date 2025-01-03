@@ -1,0 +1,29 @@
+server:
+  port: 8444
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:walnut-token
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  file:
+    path: logs/van-system.log
+  level:
+    root: INFO
+
+token-system:
+  url: "http://localhost:8445/api/tokens/validate"
+
+van:
+  whitelist:
+    - "127.0.0.1"
+    - "192.168.0.1"
